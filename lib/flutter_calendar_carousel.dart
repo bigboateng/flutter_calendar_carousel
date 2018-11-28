@@ -771,8 +771,8 @@ class _CalendarState extends State<CalendarCarousel> {
             for (int i = 0; i < widget.markedDatesMap[key]; i++) {
               tmp.add(widget.defaultMarkedDateWidget);
             }
-            return tmp;
           }
+          return tmp;
         }
       }
       return [];
