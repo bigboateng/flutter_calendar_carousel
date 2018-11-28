@@ -8,7 +8,6 @@ import 'package:intl/intl.dart' show DateFormat;
 /// A Calculator.
 
 /// A Calculator.
-;
 
 enum WeekDay { Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday }
 
