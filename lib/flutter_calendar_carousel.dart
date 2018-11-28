@@ -764,10 +764,10 @@ class _CalendarState extends State<CalendarCarousel> {
         if (key.year == now.year &&
             key.month == now.month &&
             key.day == now.day) {
+          List<Widget> tmp = [];
           if (widget.markedDateWidget != null) {
             tmp.add(widget.markedDateWidget(key));
           } else {
-            List<Widget> tmp = [];
             for (int i = 0; i < widget.markedDatesMap[key]; i++) {
               tmp.add(widget.defaultMarkedDateWidget);
             }
