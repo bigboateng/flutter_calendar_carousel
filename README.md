@@ -1,3 +1,5 @@
+This is a custom fork of the original library. The original library changes too quickly atm so I add new features to this to suit my needs.
+
 # flutter_calendar_carousel
  Calendar widget for flutter that is swipeable horizontally. This widget can help you build your own calendar widget highly customizable.
 <p align="left">
