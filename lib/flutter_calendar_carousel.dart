@@ -2,13 +2,8 @@ library flutter_calendar_dooboo;
 
 import 'package:date_utils/date_utils.dart';
 import 'package:flutter/material.dart';
-import 'package:intl/date_symbol_data_local.dart';
-/// A Calculator.
+import 'package:intl/date_symbol_data_local.dart';s
 import 'package:intl/intl.dart' show DateFormat;
-/// A Calculator.
-
-/// A Calculator.
-;
 
 enum WeekDay { Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday }
 
@@ -90,6 +85,7 @@ class CalendarCarousel extends StatefulWidget {
   final EdgeInsets weekDayMargin;
   final bool weekFormat;
   final bool showHeaderButton;
+  final Function(DateTime) onCalendarChanged;
 
   CalendarCarousel({
     this.weekDays = const ['Sun', 'Mon', 'Tue', 'Wed', 'Thur', 'Fri', 'Sat'],
@@ -128,6 +124,7 @@ class CalendarCarousel extends StatefulWidget {
     this.weekDayMargin = const EdgeInsets.only(bottom: 4.0),
     this.weekFormat = false,
     this.showHeaderButton = true,
+    this.onCalendarChanged,
   });
 
   @override
@@ -687,6 +684,13 @@ class _CalendarState extends State<CalendarCarousel> {
 
     print('startWeekDay: $_startWeekday');
     print('endWeekDay: $_endWeekday');
+
+    //call callback
+    if (this._dates.length == 3 && widget.onCalendarChanged != null) {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        widget.onCalendarChanged(this._dates[1]);
+      });
+    }
   }
 
   List<Widget> _renderWeekDays() {
