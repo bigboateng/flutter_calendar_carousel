@@ -2,11 +2,10 @@ library flutter_calendar_dooboo;
 
 import 'package:date_utils/date_utils.dart';
 import 'package:flutter/material.dart';
-import 'package:intl/date_symbol_data_local.dart';s
+import 'package:intl/date_symbol_data_local.dart';
 import 'package:intl/intl.dart' show DateFormat;
 
 enum WeekDay { Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday }
-
 typedef Widget MarkedDateWidget(DateTime dateTime);
 
 class CalendarCarousel extends StatefulWidget {
