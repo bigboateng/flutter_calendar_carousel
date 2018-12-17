@@ -266,6 +266,7 @@ class _CalendarState extends State<CalendarCarousel> {
               width: double.infinity,
               height: double.infinity,
               child: GridView.count(
+                physics: NeverScrollableScrollPhysics(),
                 crossAxisCount: 7,
                 childAspectRatio: widget.childAspectRatio,
                 padding: EdgeInsets.zero,
