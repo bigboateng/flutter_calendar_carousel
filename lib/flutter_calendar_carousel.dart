@@ -169,42 +169,44 @@ class _CalendarState extends State<CalendarCarousel> {
       height: widget.height,
       child: Column(
         children: <Widget>[
-          Container(
-            margin: widget.headerMargin,
-            child: DefaultTextStyle(
-                style: widget.headerTextStyle != null
-                    ? widget.headerTextStyle
-                    : widget.defaultHeaderTextStyle,
-                child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      widget.showHeaderButton
-                          ? IconButton(
-                              onPressed: () => _setDate(0),
-                              icon: Icon(Icons.chevron_left,
-                                  color: widget.iconColor),
-                            )
-                          : Container(),
-                      FlatButton(
-                        onPressed: () => _selectDateFromPicker(),
-                        child: widget.headerText != null
-                            ? widget.headerText
-                            : Text(
-                                widget.weekFormat
-                                    ? '${DateFormat.yMMM().format(_weeks[1].first)}'
-                                    : '${DateFormat.yMMM().format(this._dates[1])}',
-                                style: widget.headerTextStyle,
-                              ),
-                      ),
-                      widget.showHeaderButton
-                          ? IconButton(
-                              onPressed: () => _setDate(2),
-                              icon: Icon(Icons.chevron_right,
-                                  color: widget.iconColor),
-                            )
-                          : Container(),
-                    ])),
-          ),
+          widget.showHeaderButton
+              ? Container(
+                  margin: widget.headerMargin,
+                  child: DefaultTextStyle(
+                      style: widget.headerTextStyle != null
+                          ? widget.headerTextStyle
+                          : widget.defaultHeaderTextStyle,
+                      child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: <Widget>[
+                            widget.showHeaderButton
+                                ? IconButton(
+                                    onPressed: () => _setDate(0),
+                                    icon: Icon(Icons.chevron_left,
+                                        color: widget.iconColor),
+                                  )
+                                : Container(),
+                            FlatButton(
+                              onPressed: () => _selectDateFromPicker(),
+                              child: widget.headerText != null
+                                  ? widget.headerText
+                                  : Text(
+                                      widget.weekFormat
+                                          ? '${DateFormat.yMMM().format(_weeks[1].first)}'
+                                          : '${DateFormat.yMMM().format(this._dates[1])}',
+                                      style: widget.headerTextStyle,
+                                    ),
+                            ),
+                            widget.showHeaderButton
+                                ? IconButton(
+                                    onPressed: () => _setDate(2),
+                                    icon: Icon(Icons.chevron_right,
+                                        color: widget.iconColor),
+                                  )
+                                : Container(),
+                          ])),
+                )
+              : Container(),
           Container(
             child: widget.weekDays == null
                 ? Container()
