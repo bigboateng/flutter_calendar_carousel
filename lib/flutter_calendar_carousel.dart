@@ -732,7 +732,7 @@ class _CalendarState extends State<CalendarCarousel> {
   }
 
   List<Widget> _renderMarkedMap(DateTime now) {
-    if (widget.markedDatesMap != null && widget.markedDatesMap.length > 0) {
+    if (widget.markedDatesMap != null) {
       for (DateTime key in widget.markedDatesMap.keys) {
         if (key.year == now.year &&
             key.month == now.month &&
